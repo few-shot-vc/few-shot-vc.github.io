@@ -1,222 +1,222 @@
-
+<!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="styles.css">
     <meta charvctk_set="UTF-8">
-    <title>Audio demos</title>
+    <title>Interspeech Samples</title>
 </head>
 <body>
+    <h1>Few-Shot Voice Conversion Using Autoregressive Sequence-to-Sequence Neural Network</h1>
 <div>
-    <h3> Voice Cloning Experiment I</h3>
-    The multi-speaker model and speaker encoder model were trained on 84 VCTK speakers (48 KHz sampling rate), voice cloning was performed on other VCTK speakers (48 KHz sampling rate). The average duration of a cloning sample is 3.7 seconds. <b>Boldface indicates the best results.</b>
-    <h3> </h3>
+    <h2>Target Speakers</h2>
+   First, let's listen to the target speakers (Speakers 5, 6, and 7). These are the speakers that the VC model has to output.
+    <h3>CMU-Arctic Speakers</h3>
     <table>
-        <tr><td></td><td class="transcript">Speaker 0 (female)</td></tr>
-        <tr><td>Original speech</td><td><audio controls><source src="vctk_set0/ground_truth.wav"></audio></td></tr>
-        <tr><td>Cloned speech (speaker embedding adaptation with 1 sample)</td><td><audio controls><source src="vctk_set0/embedadapt_1sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (speaker embedding adaptation with 5 samples)</td><td><audio controls><source src="vctk_set0/embedadapt_5sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (speaker embedding adaptation with 10 samples)</td><td><audio controls><source src="vctk_set0/embedadapt_10sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (speaker embedding adaptation with 20 samples)</td><td><audio controls><source src="vctk_set0/embedadapt_20sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (speaker embedding adaptation with 50 samples)</td><td><audio controls><source src="vctk_set0/embedadapt_50sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (speaker embedding adaptation with 100 samples)</td><td><audio controls><source src="vctk_set0/embedadapt_100sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (whole model adaptation with 1 sample)</td><td><audio controls><source src="vctk_set0/wholemodel_1sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (whole model adaptation with 5 samples)</td><td><audio controls><source src="vctk_set0/wholemodel_5sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (whole model adaptation with 10 samples)</td><td><audio controls><source src="vctk_set0/wholemodel_10sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (whole model adaptation with 20 samples)</td><td><audio controls><source src="vctk_set0/wholemodel_20sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (whole model adaptation with 50 samples)</td><td><audio controls><source src="vctk_set0/wholemodel_50sample.wav"></audio></td></tr>
-        <tr><td><b>Cloned speech (whole model adaptation with 100 samples)</b></td><td><audio controls><source src="vctk_set0/wholemodel_100sample.wav"></audio></td></tr>
+        <tr><td></td> <td class="centertd"><b>Speaker 5 (Canadian accent)</b></td> <td class="centertd"><b>Speaker 6 (Indian accent)</b></td></tr>
+        <tr>
+            <td class="lefttd">There was no forecasting this strange girl's processes</td>
+            <td class="centertd"><audio controls><source src="https://test-voice-ai-amt-bucket.s3.amazonaws.com/samples_for_webpage/page2/speaker5_arctic_a0284.wav"></audio></td>
+            <td class="centertd"><audio controls><source src="https://test-voice-ai-amt-bucket.s3.amazonaws.com/samples_for_webpage/page2/speaker6_arctic_a0284.wav"></audio></td>
+        </tr>
+    </table>
+    <h3>Proprietary Speaker</h3>
+    <table>
+        <tr><td></td> <td class="centertd"><b>Speaker 7</b></td> </tr>
+        <tr>
+            <td class="lefttd">They all want a nice big closeup of the hero who singlehandedly saved the galaxy</td>
+            <td class="centertd"><audio controls><source src="https://test-voice-ai-amt-bucket.s3.amazonaws.com/samples_for_webpage/page3/speaker7_item_2315.wav"></audio></td>
+        </tr>
+    </table>
+</div>
+
+<h2>Few Shot Voice Conversion Best Results</h2>
+
+<h3>5 minutes, Neutral speech</h3>
+
+<table>
+    <tr><td class="centertd"><b>Source Utterance</b></td> <td class="centertd"><b>Speaker 5</b></td> <td class="centertd"><b>Speaker 6</b></td> <td class="centertd"><b>Speaker 7</b></td></tr>
+    <tr>
+        <td class="centertd">Speaker 10</td><td class="centertd">Unseen</td><td class="centertd">Unseen</td><td class="centertd">Seen</td>
+    </tr>
+    <tr>
+        <td class="centertd"><audio controls><source src="https://test-voice-ai-amt-bucket.s3.amazonaws.com/samples_for_webpage/page5/item_1269.wav"></audio></td>
+        <td class="centertd"><audio controls><source src="https://test-voice-ai-amt-bucket.s3.amazonaws.com/samples_for_webpage/page5/item_1269.cc.to.jmk_1.voc3.wav"></audio></td>
+        <td class="centertd"><audio controls><source src="https://test-voice-ai-amt-bucket.s3.amazonaws.com/samples_for_webpage/page5/item_1269.cc.to.ksp_0.voc3.wav"></audio></td>
+        <td class="centertd"><audio controls><source src="https://test-voice-ai-amt-bucket.s3.amazonaws.com/samples_for_webpage/page5/item_1269.cc.to.ep_4.voc3.wav"></audio></td>
+    </tr>
+    <tr>
+        <td class="centertd">Speaker 2</td><td class="centertd">Seen</td><td class="centertd">Seen</td><td class="centertd">Unseen</td>
+    </tr>
+    <tr>
+        <td class="centertd"><audio controls><source src="https://test-voice-ai-amt-bucket.s3.amazonaws.com/samples_for_webpage/page5/arctic_a0401.wav"></audio></td>
+        <td class="centertd"><audio controls><source src="https://test-voice-ai-amt-bucket.s3.amazonaws.com/samples_for_webpage/page5/arctic_a0401.clb.to.jmk_0.voc3.wav"></audio></td>
+        <td class="centertd"><audio controls><source src="https://test-voice-ai-amt-bucket.s3.amazonaws.com/samples_for_webpage/page5/arctic_a0401.clb.to.ksp_0.voc3.wav"></audio></td>
+        <td class="centertd"><audio controls><source src="https://test-voice-ai-amt-bucket.s3.amazonaws.com/samples_for_webpage/page5/arctic_a0401.clb.to.ep_4.voc3.wav"></audio></td>
+    </tr>
+    <tr>
+        <td class="centertd">Speaker 1</td><td class="centertd">Seen</td><td class="centertd">Seen</td><td class="centertd">Unseen</td>
+    </tr>
+    <tr>
+        <td class="centertd"><audio controls><source src="https://test-voice-ai-amt-bucket.s3.amazonaws.com/samples_for_webpage/page5/arctic_a0292.wav"></audio></td>
+        <td class="centertd"><audio controls><source src="https://test-voice-ai-amt-bucket.s3.amazonaws.com/samples_for_webpage/page5/arctic_a0292.slt.to.jmk_1.voc3.wav"></audio></td>
+        <td class="centertd"><audio controls><source src="https://test-voice-ai-amt-bucket.s3.amazonaws.com/samples_for_webpage/page5/arctic_a0292.slt.to.ksp_0.voc3.wav"></audio></td>
+        <td class="centertd"><audio controls><source src="https://test-voice-ai-amt-bucket.s3.amazonaws.com/samples_for_webpage/page5/arctic_a0292.slt.to.ep_0.voc3.wav"></audio></td>
+    </tr>
+</table>
+
+<h3 style="padding-top: 10px;">5 minutes, Expressive speech</h3>
+
+<table>
+    <tr><td class="centertd"><b>Source Utterance</b></td> <td class="centertd"><b>Speaker 5</b></td> <td class="centertd"><b>Speaker 6</b></td> <td class="centertd"><b>Speaker 7</b></td></tr>
+    <tr>
+        <td class="centertd">Speaker 10</td><td class="centertd">Unseen</td><td class="centertd">Unseen</td><td class="centertd">Seen</td>
+    </tr>
+    <tr>
+        <td class="centertd"><audio controls><source src="https://test-voice-ai-amt-bucket.s3.amazonaws.com/samples_for_webpage/page5/item_3469.wav"></audio></td>
+        <td class="centertd"><audio controls><source src="https://test-voice-ai-amt-bucket.s3.amazonaws.com/samples_for_webpage/page5/item_3469.cc.to.jmk_4.voc3.wav"></audio></td>
+        <td class="centertd"><audio controls><source src="https://test-voice-ai-amt-bucket.s3.amazonaws.com/samples_for_webpage/page5/item_3469.cc.to.ksp_3.voc3.wav"></audio></td>
+        <td class="centertd"><audio controls><source src="https://test-voice-ai-amt-bucket.s3.amazonaws.com/samples_for_webpage/page5/item_3469.cc.to.ep_0.voc3.wav"></audio></td>
+    </tr>
+    <tr>
+        <td class="centertd">Speaker 10</td><td class="centertd">Unseen</td><td class="centertd">Unseen</td><td class="centertd">Seen</td>
+    </tr>
+    <tr>
+        <td class="centertd"><audio controls><source src="https://test-voice-ai-amt-bucket.s3.amazonaws.com/samples_for_webpage/page5/item_80005.wav"></audio></td>
+        <td class="centertd"><audio controls><source src="https://test-voice-ai-amt-bucket.s3.amazonaws.com/samples_for_webpage/page5/item_80005.cc.to.jmk_2.voc3.wav"></audio></td>
+        <td class="centertd"><audio controls><source src="https://test-voice-ai-amt-bucket.s3.amazonaws.com/samples_for_webpage/page5/item_80005.cc.to.ksp_2.voc3.wav"></audio></td>
+        <td class="centertd"><audio controls><source src="https://test-voice-ai-amt-bucket.s3.amazonaws.com/samples_for_webpage/page5/item_80005.cc.to.ep_0.voc3.wav"></audio></td>
+    </tr>
+</table>
+
+<h2>More Results</h2>
+
+<h3>Long Expressive Sentence</h3>
+<table>
+    <tr class="spaceUnder">
+        <td class="lefttd">Speaker 10: Captain, get us out of here. All the way to the top. We need to get this door open. It represents the greatest migration ever attempted.</td>
+        <td class="centertd"><audio controls><source src="https://test-voice-ai-amt-bucket.s3.amazonaws.com/samples_for_webpage/page9/item_1579.wav"></audio></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr><td class="centertd">Setting</td> <td class="centertd"><b>Speaker 5 (Unseen)</b></td> <td class="centertd"><b>Speaker 6 (Unseen)</b></td> <td class="centertd"><b>Speaker 7 (Seen)</b></td></tr>
+
+    <tr>
+        <td class="centertd">Base Setting</td>
+        <td class="centertd"><audio controls><source src="https://test-voice-ai-amt-bucket.s3.amazonaws.com/samples_for_webpage/page9/base_item_1579.cc.to.jmk_0.voc3.wav"></audio></td>
+        <td class="centertd"><audio controls><source src="https://test-voice-ai-amt-bucket.s3.amazonaws.com/samples_for_webpage/page9/base_item_1579.cc.to.ksp_0.voc3.wav"></audio></td>
+        <td class="centertd"><audio controls><source src="https://test-voice-ai-amt-bucket.s3.amazonaws.com/samples_for_webpage/page9/base_item_1579.cc.to.ep_1.voc3.wav"></audio></td>
+    </tr>
+
+    <tr>
+        <td class="centertd">5 Mins, &lambda;<sub>A</sub> = 5</td>
+        <td class="centertd"><audio controls><source src="https://test-voice-ai-amt-bucket.s3.amazonaws.com/samples_for_webpage/page9/5mins_lambda5_item_1579.cc.to.jmk_0.voc3.wav"></audio></td>
+        <td class="centertd"><audio controls><source src="https://test-voice-ai-amt-bucket.s3.amazonaws.com/samples_for_webpage/page9/5mins_lambda5_item_1579.cc.to.ksp_0.voc3.wav"></audio></td>
+        <td class="centertd"><audio controls><source src="https://test-voice-ai-amt-bucket.s3.amazonaws.com/samples_for_webpage/page9/5mins_lambda5_item_1579.cc.to.ep_0.voc3.wav"></audio></td>
+    </tr>
+    <tr>
+        <td class="centertd">5 Mins, &lambda;<sub>A</sub> = 0</td>
+        <td class="centertd"><audio controls><source src="https://test-voice-ai-amt-bucket.s3.amazonaws.com/samples_for_webpage/page9/5mins_lambda0_item_1579.cc.to.jmk_0.voc3.wav"></audio></td>
+        <td class="centertd"><audio controls><source src="https://test-voice-ai-amt-bucket.s3.amazonaws.com/samples_for_webpage/page9/5mins_lambda0_item_1579.cc.to.ksp_0.voc3.wav"></audio></td>
+        <td class="centertd"><audio controls><source src="https://test-voice-ai-amt-bucket.s3.amazonaws.com/samples_for_webpage/page9/5mins_lambda0_item_1579.cc.to.ep_0.voc3.wav"></audio></td>
+    </tr>
+    <tr>
+        <td class="centertd">3 Mins</td>
+        <td class="centertd"><audio controls><source src="https://test-voice-ai-amt-bucket.s3.amazonaws.com/samples_for_webpage/page9/3mins_item_1579.cc.to.jmk_0.voc3.wav"></audio></td>
+        <td class="centertd"><audio controls><source src="https://test-voice-ai-amt-bucket.s3.amazonaws.com/samples_for_webpage/page9/3mins_item_1579.cc.to.ksp_0.voc3.wav"></audio></td>
+        <td class="centertd"><audio controls><source src="https://test-voice-ai-amt-bucket.s3.amazonaws.com/samples_for_webpage/page9/3mins_item_1579.cc.to.ep_0.voc3.wav"></audio></td>
+    </tr>
+    <tr>
+        <td class="centertd">1 Min</td>
+        <td class="centertd"><audio controls><source src="https://test-voice-ai-amt-bucket.s3.amazonaws.com/samples_for_webpage/page9/1mins_item_1579.cc.to.jmk_0.voc3.wav"></audio></td>
+        <td class="centertd"><audio controls><source src="https://test-voice-ai-amt-bucket.s3.amazonaws.com/samples_for_webpage/page9/1min_item_1579.cc.to.ksp_0.voc3.wav"></audio></td>
+        <td class="centertd"><audio controls><source src="https://test-voice-ai-amt-bucket.s3.amazonaws.com/samples_for_webpage/page9/1min_item_1579.cc.to.ep_0.voc3.wav"></audio></td>
+    </tr>
+    <tr>
+        <td class="centertd">Zero Shot</td>
+        <td class="centertd"><audio controls><source src="https://test-voice-ai-amt-bucket.s3.amazonaws.com/samples_for_webpage/page9/zero_item_1579.cc.to.jmk_0.voc3.wav"></audio></td>
+        <td class="centertd"><audio controls><source src="https://test-voice-ai-amt-bucket.s3.amazonaws.com/samples_for_webpage/page9/zero_item_1579.cc.to.ksp_0.voc3.wav"></audio></td>
+        <td class="centertd"><audio controls><source src="https://test-voice-ai-amt-bucket.s3.amazonaws.com/samples_for_webpage/page9/zero_item_1579.cc.to.ep_0.voc3.wav"></audio></td>
+    </tr>
+</table>
+
+<h3>Long Neutral Sentence</h3>
+<table>
+    <tr class="spaceUnder">
+        <td class="lefttd">Speaker 1: A combination of Canadian capital quickly organized and petitioned for the same privileges</td>
+        <td class="centertd"><audio controls><source src="https://test-voice-ai-amt-bucket.s3.amazonaws.com/samples_for_webpage/page8/arctic_a0023.wav"></audio></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr><td class="centertd">Setting</td> <td class="centertd"><b>Speaker 5 (Seen)</b></td> <td class="centertd"><b>Speaker 6 (Seen)</b></td> <td class="centertd"><b>Speaker 7 (Unseen)</b></td></tr>
+
+    <tr>
+        <td class="centertd">Base Setting</td>
+        <td class="centertd"><audio controls><source src="https://test-voice-ai-amt-bucket.s3.amazonaws.com/samples_for_webpage/page8/base_arctic_a0023.slt.to.jmk_0.voc3.wav"></audio></td>
+        <td class="centertd"><audio controls><source src="https://test-voice-ai-amt-bucket.s3.amazonaws.com/samples_for_webpage/page8/base_arctic_a0023.slt.to.ksp_0.voc3.wav"></audio></td>
+        <td class="centertd"><audio controls><source src="https://test-voice-ai-amt-bucket.s3.amazonaws.com/samples_for_webpage/page8/base_arctic_a0023.slt.to.ep_0.voc3.wav"></audio></td>
+    </tr>
+
+    <tr>
+        <td class="centertd">5 Mins, &lambda;<sub>A</sub> = 5</td>
+        <td class="centertd"><audio controls><source src="https://test-voice-ai-amt-bucket.s3.amazonaws.com/samples_for_webpage/page8/5mins_lambda5_arctic_a0023.slt.to.jmk_0.voc3.wav"></audio></td>
+        <td class="centertd"><audio controls><source src="https://test-voice-ai-amt-bucket.s3.amazonaws.com/samples_for_webpage/page8/5mins_lambda5_arctic_a0023.slt.to.ksp_0.voc3.wav"></audio></td>
+        <td class="centertd"><audio controls><source src="https://test-voice-ai-amt-bucket.s3.amazonaws.com/samples_for_webpage/page8/5mins_lambda5_arctic_a0023.slt.to.ep_0.voc3.wav"></audio></td>
+    </tr>
+    <tr>
+        <td class="centertd">5 Mins, &lambda;<sub>A</sub> = 0</td>
+        <td class="centertd"><audio controls><source src="https://test-voice-ai-amt-bucket.s3.amazonaws.com/samples_for_webpage/page8/5mins_lambda0_arctic_a0023.slt.to.jmk_0.voc3.wav"></audio></td>
+        <td class="centertd"><audio controls><source src="https://test-voice-ai-amt-bucket.s3.amazonaws.com/samples_for_webpage/page8/5mins_lambda0_arctic_a0023.slt.to.ksp_0.voc3.wav"></audio></td>
+        <td class="centertd"><audio controls><source src="https://test-voice-ai-amt-bucket.s3.amazonaws.com/samples_for_webpage/page8/5mins_lambda0_arctic_a0023.slt.to.ep_0.voc3.wav"></audio></td>
+    </tr>
+    <tr>
+        <td class="centertd">3 Mins</td>
+        <td class="centertd"><audio controls><source src="https://test-voice-ai-amt-bucket.s3.amazonaws.com/samples_for_webpage/page8/3mins_arctic_a0023.slt.to.jmk_0.voc3.wav"></audio></td>
+        <td class="centertd"><audio controls><source src="https://test-voice-ai-amt-bucket.s3.amazonaws.com/samples_for_webpage/page8/3mins_arctic_a0023.slt.to.ksp_0.voc3.wav"></audio></td>
+        <td class="centertd"><audio controls><source src="https://test-voice-ai-amt-bucket.s3.amazonaws.com/samples_for_webpage/page8/3mins_arctic_a0023.slt.to.ep_0.voc3.wav"></audio></td>
+    </tr>
+    <tr>
+        <td class="centertd">1 Min</td>
+        <td class="centertd"><audio controls><source src="https://test-voice-ai-amt-bucket.s3.amazonaws.com/samples_for_webpage/page8/1min_arctic_a0023.slt.to.jmk_0.voc3.wav"></audio></td>
+        <td class="centertd"><audio controls><source src="https://test-voice-ai-amt-bucket.s3.amazonaws.com/samples_for_webpage/page8/1min_arctic_a0023.slt.to.ksp_0.voc3.wav"></audio></td>
+        <td class="centertd"><audio controls><source src="https://test-voice-ai-amt-bucket.s3.amazonaws.com/samples_for_webpage/page8/1min_arctic_a0023.slt.to.ep_0.voc3.wav"></audio></td>
+    </tr>
+    <tr>
+        <td class="centertd">Zero Shot</td>
+        <td class="centertd"><audio controls><source src="https://test-voice-ai-amt-bucket.s3.amazonaws.com/samples_for_webpage/page8/zero_arctic_a0023.slt.to.jmk_0.voc3.wav"></audio></td>
+        <td class="centertd"><audio controls><source src="https://test-voice-ai-amt-bucket.s3.amazonaws.com/samples_for_webpage/page8/zero_arctic_a0023.slt.to.ksp_0.voc3.wav"></audio></td>
+        <td class="centertd"><audio controls><source src="https://test-voice-ai-amt-bucket.s3.amazonaws.com/samples_for_webpage/page8/zero_arctic_a0023.slt.to.ep_0.voc3.wav"></audio></td>
+    </tr>
+</table>
+
+<div>
+    <h2> Illustration of Partially Aligned Data</h2>
+
+    Our proprietary data consists of parallel speech samples that are not well aligned like the CMU-Arctic data. Here are a few such cases.
+    <table style="padding-top: 20px;">
+        <tr class="spaceUnder"><td class="centertd"><b>Description</b></td> <td class="centertd"><b>Speaker 7</b></td> <td class="centertd"><b>Speaker 10</b></td> <td class="centertd"><b>Illustration</b></td></tr>
+        <tr class="spaceUnder">
+            <td class="centertd">Difference in pauses and timing</td>
+            <td class="centertd"><audio controls><source src="https://test-voice-ai-amt-bucket.s3.amazonaws.com/samples_for_webpage/page3/speaker7_item_80766.wav"></audio></td>
+            <td class="centertd"><audio controls><source src="https://test-voice-ai-amt-bucket.s3.amazonaws.com/samples_for_webpage/page3/speaker10_item_80766.wav"></audio></td>
+            <td class="centertd"><img src="https://test-voice-ai-amt-bucket.s3.amazonaws.com/samples_for_webpage/page3/timing.png"/></td>
+        </tr>
+        <tr class="spaceUnder">
+            <td class="centertd">Long pause, incorrect pre-processing</td>
+            <td class="centertd"><audio controls><source src="https://test-voice-ai-amt-bucket.s3.amazonaws.com/samples_for_webpage/page3/speaker7_item_40031106.wav"></audio></td>
+            <td class="centertd"><audio controls><source src="https://test-voice-ai-amt-bucket.s3.amazonaws.com/samples_for_webpage/page3/speaker10_item_40031106.wav"></audio></td>
+            <td class="centertd"><img src="https://test-voice-ai-amt-bucket.s3.amazonaws.com/samples_for_webpage/page3/segmentation_1.png"/></td>
+        </tr>
+        <tr>
+            <td class="centertd">Incorrect segmentation</td>
+            <td class="centertd"><audio controls><source src="https://test-voice-ai-amt-bucket.s3.amazonaws.com/samples_for_webpage/page3/speaker7_item_40022051.wav"></audio></td>
+            <td class="centertd"><audio controls><source src="https://test-voice-ai-amt-bucket.s3.amazonaws.com/samples_for_webpage/page3/speaker10_item_40022051.wav"></audio></td>
+            <td class="centertd"><img src="https://test-voice-ai-amt-bucket.s3.amazonaws.com/samples_for_webpage/page3/segmentation_2.png"/></td>
+        </tr>
     </table>
 </div>
 
 </body>
 </html>
-
-
-<html>
-<head>
-    <meta charvctk_set="UTF-8">
-    <title>Audio demos</title>
-</head>
-<body>
-<div>
-    <h3> </h3>
-    <table>
-        <tr><td></td><td class="transcript">Speaker 1 (female)</td></tr>
-        <tr><td>Original speech</td><td><audio controls><source src="vctk_set1/ground_truth.wav"></audio></td></tr>
-        <tr><td>Cloned speech (speaker embedding adaptation with 1 sample)</td><td><audio controls><source src="vctk_set1/embedadapt_1sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (speaker embedding adaptation with 5 samples)</td><td><audio controls><source src="vctk_set1/embedadapt_5sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (speaker embedding adaptation with 10 samples)</td><td><audio controls><source src="vctk_set1/embedadapt_10sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (speaker embedding adaptation with 20 samples)</td><td><audio controls><source src="vctk_set1/embedadapt_20sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (speaker embedding adaptation with 50 samples)</td><td><audio controls><source src="vctk_set1/embedadapt_50sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (speaker embedding adaptation with 100 samples)</td><td><audio controls><source src="vctk_set1/embedadapt_100sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (whole model adaptation with 1 sample)</td><td><audio controls><source src="vctk_set1/wholemodel_1sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (whole model adaptation with 5 samples)</td><td><audio controls><source src="vctk_set1/wholemodel_5sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (whole model adaptation with 10 samples)</td><td><audio controls><source src="vctk_set1/wholemodel_10sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (whole model adaptation with 20 samples)</td><td><audio controls><source src="vctk_set1/wholemodel_20sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (whole model adaptation with 50 samples)</td><td><audio controls><source src="vctk_set1/wholemodel_50sample.wav"></audio></td></tr>
-        <tr><td><b>Cloned speech (whole model adaptation with 100 samples)</b></td><td><audio controls><source src="vctk_set1/wholemodel_100sample.wav"></audio></td></tr>
-    </table>
-</div>
-
-</body>
-</html>
-
-
-<html>
-<head>
-    <meta charvctk_set="UTF-8">
-    <title>Audio demos</title>
-</head>
-<body>
-<div>
-    <h3> </h3>
-    <table>
-        <tr><td></td><td class="transcript">Speaker 2 (male)</td></tr>
-        <tr><td>Original speech</td><td><audio controls><source src="vctk_set2/ground_truth.wav"></audio></td></tr>
-        <tr><td>Cloned speech (speaker embedding adaptation with 1 sample)</td><td><audio controls><source src="vctk_set2/embedadapt_1sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (speaker embedding adaptation with 5 samples)</td><td><audio controls><source src="vctk_set2/embedadapt_5sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (speaker embedding adaptation with 10 samples)</td><td><audio controls><source src="vctk_set2/embedadapt_10sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (speaker embedding adaptation with 20 samples)</td><td><audio controls><source src="vctk_set2/embedadapt_20sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (speaker embedding adaptation with 50 samples)</td><td><audio controls><source src="vctk_set2/embedadapt_50sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (speaker embedding adaptation with 100 samples)</td><td><audio controls><source src="vctk_set2/embedadapt_100sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (whole model adaptation with 1 sample)</td><td><audio controls><source src="vctk_set2/wholemodel_1sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (whole model adaptation with 5 samples)</td><td><audio controls><source src="vctk_set2/wholemodel_5sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (whole model adaptation with 10 samples)</td><td><audio controls><source src="vctk_set2/wholemodel_10sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (whole model adaptation with 20 samples)</td><td><audio controls><source src="vctk_set2/wholemodel_20sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (whole model adaptation with 50 samples)</td><td><audio controls><source src="vctk_set2/wholemodel_50sample.wav"></audio></td></tr>
-        <tr><td><b>Cloned speech (whole model adaptation with 100 samples)</b></td><td><audio controls><source src="vctk_set2/wholemodel_100sample.wav"></audio></td></tr>
-    </table>
-</div>
-
-</body>
-</html>
-
-<html>
-<head>
-    <meta charvctk_set="UTF-8">
-    <title>Audio demos</title>
-</head>
-<body>
-<div>
-    <h3> </h3>
-    <table>
-        <tr><td></td><td class="transcript">Speaker 3 (male)</td></tr>
-        <tr><td>Original speech</td><td><audio controls><source src="vctk_set3/ground_truth.wav"></audio></td></tr>
-        <tr><td>Cloned speech (speaker embedding adaptation with 1 sample)</td><td><audio controls><source src="vctk_set3/embedadapt_1sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (speaker embedding adaptation with 5 samples)</td><td><audio controls><source src="vctk_set3/embedadapt_5sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (speaker embedding adaptation with 10 samples)</td><td><audio controls><source src="vctk_set3/embedadapt_10sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (speaker embedding adaptation with 20 samples)</td><td><audio controls><source src="vctk_set3/embedadapt_20sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (speaker embedding adaptation with 50 samples)</td><td><audio controls><source src="vctk_set3/embedadapt_50sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (speaker embedding adaptation with 100 samples)</td><td><audio controls><source src="vctk_set3/embedadapt_100sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (whole model adaptation with 1 sample)</td><td><audio controls><source src="vctk_set3/wholemodel_1sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (whole model adaptation with 5 samples)</td><td><audio controls><source src="vctk_set3/wholemodel_5sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (whole model adaptation with 10 samples)</td><td><audio controls><source src="vctk_set3/wholemodel_10sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (whole model adaptation with 20 samples)</td><td><audio controls><source src="vctk_set3/wholemodel_20sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (whole model adaptation with 50 samples)</td><td><audio controls><source src="vctk_set3/wholemodel_50sample.wav"></audio></td></tr>
-        <tr><td><b>Cloned speech (whole model adaptation with 100 samples)</b></td><td><audio controls><source src="vctk_set3/wholemodel_100sample.wav"></audio></td></tr>
-    </table>
-</div>
-<hr>
-</body>
-</html>
-
-
-
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Audio demos</title>
-</head>
-<body>
-<div>
-    <h3> Voice Cloning Experiment II</h3>
-    The multi-speaker model and speaker encoder model were trained on LibriSpeech speakers (16 KHz sampling rate), voice cloning was performed on VCTK speakers (downsampled to 16 KHz sampling rate). The average duration of a cloning sample is 3.7 seconds. <b>Boldface indicates the best results.</b>
-    <h3> </h3>
-    <table>
-        <tr><td></td><td class="transcript">Speaker 0 (female)</td></tr>
-        <tr><td>Original speech</td><td><audio controls><source src="set0/ground_truth.wav"></audio></td></tr>
-        <tr><td>Cloned speech (speaker embedding adaptation with 1 sample)</td><td><audio controls><source src="set0/embedadapt_1sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (speaker embedding adaptation with 5 samples)</td><td><audio controls><source src="set0/embedadapt_5sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (speaker embedding adaptation with 10 samples)</td><td><audio controls><source src="set0/embedadapt_10sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (speaker embedding adaptation with 20 samples)</td><td><audio controls><source src="set0/embedadapt_20sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (speaker embedding adaptation with 50 samples)</td><td><audio controls><source src="set0/embedadapt_50sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (speaker embedding adaptation with 100 samples)</td><td><audio controls><source src="set0/embedadapt_100sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (whole model adaptation with 1 sample)</td><td><audio controls><source src="set0/wholemodel_1sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (whole model adaptation with 5 samples)</td><td><audio controls><source src="set0/wholemodel_5sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (whole model adaptation with 10 samples)</td><td><audio controls><source src="set0/wholemodel_10sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (whole model adaptation with 20 samples)</td><td><audio controls><source src="set0/wholemodel_20sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (whole model adaptation with 50 samples)</td><td><audio controls><source src="set0/wholemodel_50sample.wav"></audio></td></tr>
-        <tr><td><b>Cloned speech (whole model adaptation with 100 samples)</b></td><td><audio controls><source src="set0/wholemodel_100sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (speaker encoder without fine-tuning with 1 sample)</td><td><audio controls><source src="set0/withoutfinetuning_1sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (speaker encoder without fine-tuning with 5 samples)</td><td><audio controls><source src="set0/withoutfinetuning_5sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (speaker encoder without fine-tuning with 10 samples)</td><td><audio controls><source src="set0/withoutfinetuning_10sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (speaker encoder with fine-tuning with 1 sample)</td><td><audio controls><source src="set0/withfinetuning_1sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (speaker encoder with fine-tuning with 5 samples)</td><td><audio controls><source src="set0/withfinetuning_5sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (speaker encoder with fine-tuning with 10 samples)</td><td><audio controls><source src="set0/withfinetuning_10sample.wav"></audio></td></tr>
-    </table>
-</div>
-
-</body>
-</html>
-
-
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Audio demos</title>
-</head>
-<body>
-<div>
-    <h3> </h3>
-    <table>
-        <tr><td></td><td class="transcript">Speaker 1 (female)</td></tr>
-        <tr><td>Original speech</td><td><audio controls><source src="set1/ground_truth.wav"></audio></td></tr>
-        <tr><td>Cloned speech (speaker embedding adaptation with 1 sample)</td><td><audio controls><source src="set1/embedadapt_1sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (speaker embedding adaptation with 5 samples)</td><td><audio controls><source src="set1/embedadapt_5sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (speaker embedding adaptation with 10 samples)</td><td><audio controls><source src="set1/embedadapt_10sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (speaker embedding adaptation with 20 samples)</td><td><audio controls><source src="set1/embedadapt_20sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (speaker embedding adaptation with 50 samples)</td><td><audio controls><source src="set1/embedadapt_50sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (speaker embedding adaptation with 100 samples)</td><td><audio controls><source src="set1/embedadapt_100sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (whole model adaptation with 1 sample)</td><td><audio controls><source src="set1/wholemodel_1sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (whole model adaptation with 5 samples)</td><td><audio controls><source src="set1/wholemodel_5sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (whole model adaptation with 10 samples)</td><td><audio controls><source src="set1/wholemodel_10sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (whole model adaptation with 20 samples)</td><td><audio controls><source src="set1/wholemodel_20sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (whole model adaptation with 50 samples)</td><td><audio controls><source src="set1/wholemodel_50sample.wav"></audio></td></tr>
-        <tr><td><b>Cloned speech (whole model adaptation with 100 samples)</b></td><td><audio controls><source src="set1/wholemodel_100sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (speaker encoder without fine-tuning with 1 sample)</td><td><audio controls><source src="set1/withoutfinetuning_1sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (speaker encoder without fine-tuning with 5 samples)</td><td><audio controls><source src="set1/withoutfinetuning_5sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (speaker encoder without fine-tuning with 10 samples)</td><td><audio controls><source src="set1/withoutfinetuning_10sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (speaker encoder with fine-tuning with 1 sample)</td><td><audio controls><source src="set1/withfinetuning_1sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (speaker encoder with fine-tuning with 5 samples)</td><td><audio controls><source src="set1/withfinetuning_5sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (speaker encoder with fine-tuning with 10 samples)</td><td><audio controls><source src="set1/withfinetuning_10sample.wav"></audio></td></tr>
-    </table>
-</div>
-
-</body>
-</html>
-
-
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Audio demos</title>
-</head>
-<body>
-<div>
-    <h3> </h3>
-    <table>
-        <tr><td></td><td class="transcript">Speaker 2 (male)</td></tr>
-        <tr><td>Original speech</td><td><audio controls><source src="set2/ground_truth.wav"></audio></td></tr>
-        <tr><td>Cloned speech (speaker embedding adaptation with 1 sample)</td><td><audio controls><source src="set2/embedadapt_1sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (speaker embedding adaptation with 5 samples)</td><td><audio controls><source src="set2/embedadapt_5sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (speaker embedding adaptation with 10 samples)</td><td><audio controls><source src="set2/embedadapt_10sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (speaker embedding adaptation with 20 samples)</td><td><audio controls><source src="set2/embedadapt_20sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (speaker embedding adaptation with 50 samples)</td><td><audio controls><source src="set2/embedadapt_50sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (speaker embedding adaptation with 100 samples)</td><td><audio controls><source src="set2/embedadapt_100sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (whole model adaptation with 1 sample)</td><td><audio controls><source src="set2/wholemodel_1sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (whole model adaptation with 5 samples)</td><td><audio controls><source src="set2/wholemodel_5sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (whole model adaptation with 10 samples)</td><td><audio controls><source src="set2/wholemodel_10sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (whole model adaptation with 20 samples)</td><td><audio controls><source src="set2/wholemodel_20sample.wav"></audio></td></tr>
-        <tr><td>Cloned speech (whole model adaptation with 50 samples)</td><td><audio controls><source src="set2/wholemodel_50sample.wav"></audio></td></tr>
         <tr><td><b>Cloned speech (whole model adaptation with 100 samples)</b></td><td><audio controls><source src="set2/wholemodel_100sample.wav"></audio></td></tr>
         <tr><td>Cloned speech (speaker encoder without fine-tuning with 1 sample)</td><td><audio controls><source src="set2/withoutfinetuning_1sample.wav"></audio></td></tr>
         <tr><td>Cloned speech (speaker encoder without fine-tuning with 5 samples)</td><td><audio controls><source src="set2/withoutfinetuning_5sample.wav"></audio></td></tr>

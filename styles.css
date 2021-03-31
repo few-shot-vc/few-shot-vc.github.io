@@ -1,0 +1,31 @@
+td 
+{
+    width: 350px;
+}
+
+#cssTable td 
+{
+    text-align: center; 
+    vertical-align: middle;
+}
+
+.centertd
+{
+    text-align: center; 
+    vertical-align: middle;
+}
+
+.lefttd
+{
+    text-align: left; 
+    vertical-align: middle;
+}
+
+tr.spaceUnder>td {
+    padding-bottom: 20px;
+}
+
+img {
+width: 400px;
+height: auto
+}
